@@ -8,8 +8,10 @@ export default (dependencies: Dependencies, routes: typeof Routes) => {
         try {
             await next()
         } catch (err) {
+            // @ts-ignore
             ctx.status = err.status || 500
             ctx.body = {
+                // @ts-ignore
                 message: err.message,
                 status: ctx.status,
             }
