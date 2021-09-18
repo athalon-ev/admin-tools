@@ -1,4 +1,4 @@
-version: '2.3'
+version: '2.0'
 services:
   admin-tools-server:
     container_name: athalon-admin-tools-server
@@ -8,7 +8,7 @@ services:
       - traefik.enable=true
       - traefik.port=80
       - traefik.frontend.rule=Host:admin.athalon.de;PathPrefix:/api;PathPrefixStrip:/api
-    network:
+    networks:
       docker_athalon:
     volumes:
       - /var/mydata/minecraft/latest/Einfuehrung/playerdata/:/app/data
@@ -20,7 +20,7 @@ services:
       - traefik.enable=true
       - traefik.port=3000
       - traefik.frontend.rule=Host:admin.athalon.de
-    network:
+    networks:
       docker_athalon:
 networks:
   docker_athalon:
