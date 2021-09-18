@@ -19,8 +19,8 @@
 							</div>
 						</div>
 						<div v-else-if="'pages' in item.tag.value" class="flex flex-wrap">
-							<div v-for="(page, index) in item.tag.value.pages.value.value" :key="index" class="p-2">
-								<div class="p-4 shadow w-1/3 bg-blue-200">
+							<div v-for="(page, index) in item.tag.value.pages.value.value" :key="index" class="p-2 w-1/3">
+								<div class="p-4 shadow bg-blue-200 h-full">
 									<b>Seite {{ index + 1 }}</b>
 									<pre class="whitespace-pre-wrap break-all">{{ page }}</pre>
 								</div>

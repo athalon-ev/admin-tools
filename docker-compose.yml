@@ -20,6 +20,7 @@ services:
       - traefik.enable=true
       - traefik.port=3000
       - traefik.frontend.rule=Host:admin.athalon.de
+      - "traefik.frontend.auth.basic.users=windroggen:$$2y$$05$$tPhBMFZQ9ZXJythEPV9VbeM6zbzPOF7ZidXYztd10eQu9e3SKlWOW"
     networks:
       docker_athalon:
 networks:
