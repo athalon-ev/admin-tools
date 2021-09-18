@@ -26,7 +26,7 @@ export const listPlayers = async (dependencies: Dependencies) => {
         .map(async file => ({
             file,
             uuid: file.replace(datFileEnding, ''),
-            info: getPlayerInfoByUuid(dependencies, file.replace(datFileEnding, ''))
+            info: await getPlayerInfoByUuid(dependencies, file.replace(datFileEnding, ''))
         }))
     )
 }
