@@ -1,0 +1,27 @@
+version: 2.3
+services:
+  admin-tools-server:
+    container_name: athalon-admin-tools-server
+    image: 'registry.athalon.net/misan/admin-tools-server:latest'
+    build: './server'
+    labels:
+      - traefik.enable=true
+      - traefik.port=80
+      - traefik.frontend.rule=Host:admin.athalon.de;PathPrefix:/api;PathPrefixStrip:/api
+    network:
+      docker_athalon:
+    volumes:
+      - /var/mydata/minecraft/latest/Einfuehrung/playerdata/:/app/data
+  admin-tools-client:
+    container_name: athalon-admin-tools-client
+    image: 'registry.athalon.net/misan/admin-tools-client:latest'
+    build: './client'
+    labels:
+      - traefik.enable=true
+      - traefik.port=3000
+      - traefik.frontend.rule=Host:admin.athalon.de
+    network:
+      docker_athalon:
+networks:
+  docker_athalon:
+    external: true
