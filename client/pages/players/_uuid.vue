@@ -5,7 +5,7 @@
 			<div class="p-4">
 				<div v-for="item in player.Inventory.value.value" :key="item.Slot.value" class="p-4 shadow rounded bg-blue-100 my-4">
 					<b>Slot:</b> {{ item.Slot.value }}<br>
-					<b>Item:</b> {{ item.id.value }}<br>
+					<b>Item:</b> {{ item.Count.value }}&times; {{ item.id.value }}<br>
 					<div v-if="item.tag">
 						<b>Details</b>
 						<div v-if="'display' in item.tag.value">
@@ -27,7 +27,7 @@
 							</div>
 						</div>
 						<div v-else>
-							<pre classmy-2 ="bg-white rounded shadow whitespace-pre-wrap break-all">{{ item.tag.value }}</pre>
+							<pre class="my-2 bg-white rounded shadow whitespace-pre-wrap break-all">{{ item.tag.value }}</pre>
 						</div>
 					</div>
 				</div>
