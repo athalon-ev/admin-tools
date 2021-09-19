@@ -6,5 +6,3 @@ dotenv.config()
 
 const dependencies = dependencyContainer()
 server(dependencies, routes)
-
-console.log(dependencies.config.player)

@@ -12,6 +12,7 @@ services:
       docker_athalon:
     volumes:
       - /var/mydata/minecraft/latest/Einfuehrung/playerdata/:/app/data
+      - /var/mydata/minecraft/latest/plugins/LootChest/data.yml:/app/data.yml
   admin-tools-client:
     container_name: athalon-admin-tools-client
     image: 'registry.athalon.net/misan/admin-tools-client:latest'

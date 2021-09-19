@@ -5,6 +5,7 @@ export default (dependencies: Dependencies, routes: typeof Routes) => {
     const { lib: { Koa, KoaRouter, console }, config } = dependencies
     const app = new Koa()
     app.use(dependencies.config.server.globalMiddlewares.KoaCors())
+    app.use(dependencies.config.server.globalMiddlewares.KoaBody())
     app.use(async (ctx, next) => {
         try {
             await next()
