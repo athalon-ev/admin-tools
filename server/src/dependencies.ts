@@ -39,7 +39,7 @@ const getContainer = () => ({
     },
     config: {
         lootchests: {
-            dataFilePath: path.resolve(rootPath, '../data.yml')
+            dataFilePath: path.resolve(rootPath, 'data.yml')
         },
         player: {
             datFilesFolderPath: path.resolve(rootPath, 'data')
