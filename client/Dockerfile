@@ -1,15 +1,15 @@
 FROM node:14
 
-# Create app directory
 WORKDIR /app
-ADD . /app/
+ADD package.json /app/
+ADD yarn.lock /app/
 
-# global install & update
 RUN yarn
+
+ADD . /app/
 RUN yarn build
 
 ENV HOST 0.0.0.0
 EXPOSE 3000
 
-# start command
 CMD [ "yarn", "start" ]
